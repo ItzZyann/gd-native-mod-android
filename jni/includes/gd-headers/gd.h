@@ -14,3 +14,6 @@ using namespace cocos2d::extension;
 #include "GJAccountManager.h"
 #include "MenuLayer.h"
 #include "SearchButton.h"
+#include "Slider.h"
+#include "SliderThumb.h"
+#include "SliderTouchLogic.h"
