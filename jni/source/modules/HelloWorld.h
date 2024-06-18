@@ -8,5 +8,7 @@ public:
  virtual bool init();
  virtual void keyBackClicked();
  
+ void onBack(CCObject*);
+ 
  CREATE_FUNC(HelloWorld);
 };

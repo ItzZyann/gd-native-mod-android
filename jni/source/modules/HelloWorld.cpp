@@ -18,6 +18,67 @@ bool HelloWorld::init() {
  CCDirector* dir = CCDirector::sharedDirector();
  CCSize winSize = dir->getWinSize();
  
+ /*
+ To make it this layer like, really
+ alive, lets add Background, the Back Button.
+ And some stuffs.
+ */
+ 
+ // First lets get the "GJ_gradientBG.png" first
+ // Since this sprite is not on sprite sheet, lets use
+ // the CCSprite::create(filename)
+ 
+ CCSprite* bg = CCSprite::create("GJ_gradientBG.png");
+ CCSize bgSize = bg->getTextureRect().size; // Now lets get the Sprite Size
+
+ // Now lets setup the positioning
+ // and scaling.
+ bg->setAnchorPoint({0, 0});
+ bg->setScaleX((winSize.width + 10) / bgSize.width);
+ bg->setScaleY((winSize.height + 10) / bgSize.height);
+ bg->setPosition({-5, -5});
+ 
+ // Now the default bg Color.
+ // The format is rgb
+ // check out the main.cpp for more
+ // instructions
+ bg->setColor({0, 102, 255});
+ 
+ // Now lets add the child.
+ this->addChild(bg, -1);
+ // I put -1 because it should be lower
+ // But its your choice what z layer you want.
+ 
+ /*
+ Now lets setup the back button.
+ Since we get the sprite on sprite sheet. We will
+ use the "CCSprite::createWithSpriteFrameName(filename)
+ Example:
+ */
+ 
+ CCSprite* backSpr = CCSprite::createWithSpriteFrameName("GJ_arrow_01_001.png");
+ 
+ // Now lets link the sprite
+ // with CCMenuItemSpriteExtra so that
+ // we can add callback.
+ CCMenuItemSprite* backBtn = CCMenuItemSpriteExtra::create(
+  backSpr, // unselected sprite
+  backSpr, // selected sprite
+  menu_selector(HelloWorld::onBack)); // the call back
+
+ // Now lets create a menu for our back button
+ // and we will add the backBtn.
+ CCMenu* menu = CCMenu::create();
+ menu->addChild(backBtn); // Adding the button
+
+ // Set the position to the top left of the screen
+ menu->setPosition({25, winSize.height - 25});
+
+ this->addChild(menu); // Now lets add the menu.
+ 
+ // Now everything we do
+ // will be shown in HelloWorld Layer.
+    
  // Label arguments is "The Text you Want"
  // and the Font, which is ".fnt" files
  auto label = CCLabelBMFont::create(
@@ -52,4 +113,11 @@ void HelloWorld::keyBackClicked() {
  
  GameManager* manager = GameManager::sharedState();
  manager->safePopScene();
+}
+
+// Now to add a function on our
+// custom function which is "onBack(CCObject*)"
+// we should do the same as keyBackClicked.
+void HelloWorld::onBack(CCObject* pSender) {
+ keyBackClicked(); // Lets just call this function.
 }
