@@ -5,7 +5,7 @@
 
 // ItzZyann
 
-class FLAlertLayerProtocol;
+class FLAlertLayerProtocol { };
 class ScrollingLayer;
 class FLAlertLayer : public CCLayerColor {
 public:

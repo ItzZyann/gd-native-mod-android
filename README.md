@@ -96,6 +96,7 @@ Note: names are without `lib` and without `.so`
 After this one-time setup you only need to update the `libgame.so` file inside the `lib/armeabi-v7a/` folder.
 
 All the source files contain a lot of comments which you should definitely read if you're just starting out :) (i recommend starting from main.cpp)
+For more hacks or mod example you can go to [gd-example-mods](https://github.com/ItzZyann/gd-example-mods/)
 
 ## Resources
 - [Ghidra](https://ghidra-sre.org/) - A free reverse engineering tool, which is almost mandatory for GD modding
