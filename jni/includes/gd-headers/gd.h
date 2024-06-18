@@ -12,6 +12,7 @@ using namespace cocos2d::extension;
 #include "FLAlertLayer.h"
 #include "GameManager.h"
 #include "GJAccountManager.h"
+#include "GJGameLevel.h"
 #include "MenuLayer.h"
 #include "SearchButton.h"
 #include "Slider.h"
