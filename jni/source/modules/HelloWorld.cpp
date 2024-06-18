@@ -64,6 +64,7 @@ bool HelloWorld::init() {
  CCMenuItemSprite* backBtn = CCMenuItemSpriteExtra::create(
   backSpr, // unselected sprite
   backSpr, // selected sprite
+  this, // the object target
   menu_selector(HelloWorld::onBack)); // the call back
 
  // Now lets create a menu for our back button
