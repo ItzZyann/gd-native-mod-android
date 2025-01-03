@@ -1,6 +1,6 @@
 # gd-native-mod-android
 Basic Geometry Dash Native Mod example meant for beginners or as a template.
-And now? It supports v2.2 (2.206)
+And now? It supports v2.2
 A updated version of [gd-mod-example-android](https://github.com/iAndyHD3/gd-mod-example-android) for Android featuring a new and updated modloader.
 <p align="center">
 <img src="https://github.com/ItzZyann/gd-native-mod-android/blob/main/screenshots/shot1.jpg" alt="screenshot" width="48%">
