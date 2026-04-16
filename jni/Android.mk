@@ -37,7 +37,7 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/includes \
                     $(LOCAL_PATH)/includes/cores \
 
 LOCAL_SRC_FILES := source/main.cpp \
-                   source/modules/HelloWorld.cpp \
+				   includes/cores/And64InlineHook/And64InlineHook.cpp \
 				   includes/cores/KittyMemory/KittyMemory.cpp \
 				   includes/cores/KittyMemory/KittyUtils.cpp \
 				   includes/cores/KittyMemory/MemoryBackup.cpp \

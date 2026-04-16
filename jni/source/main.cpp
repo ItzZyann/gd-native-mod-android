@@ -16,9 +16,14 @@ bool MenuLayer_initH(MenuLayer* pThis) {
     return true;
 }
 
+void MenuLayer_onMoreGames() {
+    // lets try the static hook
+}
+
 __attribute__((constructor))
 void lib_gdmod() {
 
     hook("_ZN9MenuLayer4initEv", MenuLayer_initH, MenuLayer_initO);
+    _hook("", MenuLayer_onMoreGames);
     
 }
