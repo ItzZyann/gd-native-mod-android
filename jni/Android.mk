@@ -2,19 +2,6 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_CPP_FEATURES := rtti
-LOCAL_MODULE := dobby
-LOCAL_SRC_FILES := includes/prebuilts/libdobby.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_CPP_FEATURES := rtti
-LOCAL_MODULE := hooking
-LOCAL_SHARED_LIBRARIES := dobby
-LOCAL_SRC_FILES := includes/prebuilts/libhooking.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_CPP_FEATURES := rtti
 LOCAL_MODULE := fmod
 LOCAL_SRC_FILES := includes/prebuilts/libfmod.so
 include $(PREBUILT_SHARED_LIBRARY)
@@ -44,7 +31,7 @@ LOCAL_CFLAGS := -w
 LOCAL_CPP_FEATURES := rtti
 LOCAL_MODULE := game
 LOCAL_DISABLE_FORMAT_STRING_CHECKS := true
-LOCAL_SHARED_LIBRARIES := cocos2dcpp hooking
+LOCAL_SHARED_LIBRARIES := cocos2dcpp fmod
 TARGET_ARCH_ABI := all
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/includes \
                     $(LOCAL_PATH)/includes/cores \

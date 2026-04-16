@@ -4,13 +4,14 @@
 #include <cstdio>
 #include <pthread.h>
 
-#define hook(symbol, newfunc, trampoline) HookManager::do_hook(HookManager::getPointerFromSymbol(dlopen(("libcocos2dcpp.so") != "" ? ("libcocos2dcpp.so") : NULL, RTLD_LAZY), symbol), (void*)newfunc, (void**)&trampoline);
-#define _hook(symbol, newfunc) HookManager::do_hook(HookManager::getPointerFromSymbol(dlopen(("libcocos2dcpp.so") != "" ? ("libcocos2dcpp.so") : NULL, RTLD_LAZY), symbol), (void*)newfunc, NULL);
+// include the hook file
+// lets prio 64bit this time
+// since google req. 64bit apps now.
 
-class HookManager {
-public:
- static void do_hook(void* origin, void* newfunc, void* trampoline,bool hookzz = false);
- static void* getPointerFromSymbol(void* handle, const char* symbol) {	
-  return reinterpret_cast<void*>(dlsym(handle, symbol));
- }	
-};
+#include "And64InlineHook/And64InlineHook.hpp"
+
+#define hook(offset, hook, original) \
+    A64HookFunction((void*)dlysm(dlopen("libcocos2dcpp.so", RTLD_LAZY), offset, (void*)hook, (void**)&original)) \
+
+#define _hook(offset, hook) \
+    A64HookFunction((void*)dlysm(dlopen("libcocos2dcpp.so", RTLD_LAZY), offset, (void*)hook, NULL)) \
