@@ -2,7 +2,7 @@
 
 ## Requirements
 
--   Use **Android NDK r16 or r17 only**\
+-   Use **Android NDK r16 or r17 only**
 -   Versions below r16 or above r17 are **not supported**
 
 Make sure you: - Know basic **C++** - Understand the **cocos2d API**
@@ -11,9 +11,9 @@ Make sure you: - Know basic **C++** - Understand the **cocos2d API**
 
 ## How to Use
 
-1.  Clone the repository\
+1.  Clone the repository
 
-2.  Extract it\
+2.  Extract it
 
 3.  Add the NDK to your **environment path**
 
@@ -47,7 +47,7 @@ modding.
 
 3.  Open `classes.dex`
 
-4.  Find the `GeometryJump` class\
+4.  Find the `GeometryJump` class
     Path:
 
         com/robtopx/geometryjump/GeometryJump
@@ -65,18 +65,18 @@ modding.
 
 7.  Repack and sign the APK
 
-8.  Done --- your mod should now work 🎉
+8.  Done, your mod should now work 🎉
 
 ------------------------------------------------------------------------
 
 ## For Geometry Dash 2.1
 
-Check this repo instead:\
+Check this repo instead:
 https://github.com/iAndyHD3/gd-mod-example-android
 
 ------------------------------------------------------------------------
 
 ## Contact
 
--   Discord: `itzzyann_`\
+-   Discord: `itzzyann_`
 -   Gmail: `zyanndev@gmail.com`
