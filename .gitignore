@@ -11,5 +11,6 @@ build-*/
 *.out
 *.exe
 *.app
+*.sh
 
 .DS_Store
